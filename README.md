@@ -15,6 +15,16 @@ To initialize a project with this exapmple, run `truffle init webpack` inside an
 1. First run `truffle compile`, then run `truffle migrate` to deploy the contracts onto your network of choice (default "development").
 1. Then run `npm run dev` to build the app and serve it on http://localhost:8080
 
+## Starting a client
+An ethereum client needs to be running for the application to access. <em>testrpc</em> is a convenient ethereum newtork simulator that runs entirely locally. To start it, execute the following command:
+```
+> ./node_modules/ethereumjs-testrpc/bin/testrpc -u 0 -u 1
+```
+To access the actual Ethereum network, we prefer the <em>geth</em> client. To run the geth client on the test network, execute the supplied script:
+```
+> ./get-test.sh
+```
+
 ## Possible upgrades
 
 * Use the webpack hotloader to sense when contracts or javascript have been recompiled and rebuild the application. Contributions welcome!
