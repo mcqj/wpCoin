@@ -1,9 +1,14 @@
-# truffle-init-webpack
-Example webpack project with Truffle. Includes contracts, migrations, tests, user interface and webpack build pipeline.
+# truffle-react
+Example React project with Truffle. Includes contracts, migrations, tests, user interface and webpack build pipeline.
 
 ## Usage
 
 To initialize a project with this exapmple, run `truffle init webpack` inside an empty directory.
+
+## TODO
+
+- Update setState to an immutable style.
+- Move mCoin tests into usit tests - currently tested with cli app 'test.js'
 
 ## Building and the frontend
 
