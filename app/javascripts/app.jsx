@@ -37,8 +37,6 @@ class Transfer extends React.Component {
   }
 
   onSendClicked() {
-    const newState = this.state;
-    this.setState({ checked: newState }); // we update our state
     this.props.callbackParent(this.state.amount, this.state.receiver); // we notify our parent
   }
 
