@@ -2,8 +2,9 @@
 Example React project with Truffle. Includes contracts, migrations, tests, user interface and webpack build pipeline.
 
 ## Usage
-
-To initialize a project with this exapmple, run `truffle init webpack` inside an empty directory.
+We prefer to install 'truffle' locally that globally and so we run it from an npm script e.g. `npm run truffle -- migrate`
+This project was initially created with `npm run truffle -- init webpack` inside an empty directory.
+To run JS scripts from truffle, e.g checkAllBalances.js: `npm run truffle -- exec checkAllBalances`
 
 ## TODO
 
