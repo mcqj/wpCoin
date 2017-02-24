@@ -1,5 +1,6 @@
 // Import the page's CSS. Webpack will know what to do with it.
-import "../stylesheets/app.css";
+import '../stylesheets/main.scss';
+import '../stylesheets/app.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as mCoin from './mCoin' 
@@ -8,7 +9,7 @@ function Balances(props) {
   return (
     <div>
       <h3>You have <span className="black">${props.balOrg}</span> META</h3>
-      <h3>Dest has <span className="black">${props.balDest}></span> META</h3>
+      <h3>Dest has <span className="black">${props.balDest}</span> META</h3>
     </div>
   );
 }
@@ -99,7 +100,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='app'>
+        <div className='appHeader'>
+          Meta Coin Sample Truffle dApp
+        </div>
         <Balances account1={this.state.accounts[0]} balOrg={this.state.balance0} balDest={this.state.balance1} />
         <Transfer callbackParent={(amount, receiver) => this.handleSend(amount, receiver) }/>
       </div>

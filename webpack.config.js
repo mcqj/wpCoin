@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './app/javascripts/app.jsx',
@@ -11,7 +12,8 @@ module.exports = {
     // Copy our app's index.html to the build folder.
     new CopyWebpackPlugin([
       { from: 'public'},
-    ])
+    ]),
+    new ExtractTextPlugin('bundle.css')
   ],
   module: {
     rules: [
@@ -19,15 +21,31 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: 'style-loader',
-          },
-          {
             loader: 'css-loader',
             options: {
               modules: true
             }
           }
         ]
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true
+              }
+            }
+          ]
+        })
       },
       {
         test: /\.(js|jsx)$/,
