@@ -20,6 +20,9 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
+/*          {
+            loader: 'style-loader'
+          }, */
           {
             loader: 'css-loader',
             options: {
@@ -31,6 +34,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
+//          fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
