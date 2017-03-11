@@ -11,9 +11,13 @@ Some of the tools that are needed are:-
 
 ## Installing the solc CLI on Mac
 Use Homebrew and be aware that it takes a very long time (maybe half an hour). Be patient, it's probably not broken.
-`brew tap ethereum/ethereum`
-`brew install solidity`
+```
+brew tap ethereum/ethereum
+brew install solidity
+```
 
 ## Using solc
 For some unfathomable reason, solc won't compile a file (or string) containing new lines. So, you first need to strip the new lines. For example,
-`tr -d '\n' <Greeter.sol | solc --bin -o ./bin`
+```
+tr -d '\n' <Greeter.sol | solc --bin -o ./bin
+```
